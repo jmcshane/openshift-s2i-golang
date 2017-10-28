@@ -13,7 +13,9 @@ if [ ! -z "${GOLANG_BINARY_NAME}" ]; then
 fi
 
 cp -Rf /tmp/src/. $HOME/
-mv $HOME/* $HOME/$BINARY_NAME
+if [ ! -e "$HOME/$BINARY_NAME" ]; then
+  mv $HOME/* $HOME/$BINARY_NAME
+fi
 
 chmod 777 $HOME/$BINARY_NAME
 
