@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+BINARY_NAME=main
+if [ ! -z "${GOLANG_BINARY_NAME}" ]; then
+  BINARY_NAME=${GOLANG_BINARY_NAME}
+fi
+
+exec $HOME/$BINARY_NAME

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+echo
+echo "===> Build started at $(date)"
+echo
+START=$SECONDS
+
+BINARY_NAME=main
+if [ ! -z "${GOLANG_BINARY_NAME}" ]; then
+  BINARY_NAME=${GOLANG_BINARY_NAME}
+fi
+
+cp -Rf /tmp/src/. $HOME/
+mv $HOME/* $HOME/$BINARY_NAME
+
+chmod 777 $HOME/$BINARY_NAME
+
+echo
+echo "Assemble completed at $(date)"
+
+fix-permissions ./

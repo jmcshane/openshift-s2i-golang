@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cat <<EOF
+This is an S2I builder that constructs docker images
+from a single linux binary.
+
+To set the name of the binary, add the environment variable
+GOLANG_BINARY_NAME to the build and deployment configuration.
+EOF
